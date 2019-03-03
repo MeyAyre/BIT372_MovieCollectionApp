@@ -9,8 +9,8 @@
     <string name="menuitem_delete">Delete</string>
     <string name="hint_title">title (Required)</string>
     <string name="hint_year">Year</string>
-    <string name="hint_director_first">(first name)</string>
-    <string name="hint_director_last">(last name)</string>
+    <string name="hint_director_first">First Name</string>
+    <string name="hint_director_last">Last Name</string>
     <string name="hint_runtime">Runtime</string>
     <string name="confirm_title">Are you sure?</string>
     <string name="confirm_message">This will permanently delete the movie from the list</string>
