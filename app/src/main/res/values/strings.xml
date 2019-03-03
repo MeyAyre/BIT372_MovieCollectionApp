@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">MovieCollectionApp</string>
+    <string name="menuitem_label_title">Title</string>
+    <string name="menuitem_label_Year">Year</string>
+    <string name="menuitem_label_director">Director</string>
+    <string name="menuitem_label_runtime">Runtime</string>
+    <string name="menuitem_collection">Is this in your collection?</string>
+    <string name="menuitem_edit">Edit</string>
+    <string name="menuitem_delete">Delete</string>
+    <string name="hint_title">title (Required)</string>
+    <string name="hint_year">Year</string>
+    <string name="hint_director_first">(first name)</string>
+    <string name="hint_director_last">(last name)</string>
+    <string name="hint_runtime">Runtime</string>
+    <string name="confirm_title">Are you sure?</string>
+    <string name="confirm_message">This will permanently delete the movie from the list</string>
+    <string name="confirm_added">Movie added successfully!</string>
+    <string name="confirm_error">Movie not added :( </string>
+    <string name="confirm_updated">Movie updated successfully!</string>
+    <string name="confirm_update_error">Could not update :(</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="button_delete">Delete</string>
+    <string name="heading_movie">Movie</string>
+
+
+
 </resources>
