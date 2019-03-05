@@ -3,6 +3,7 @@ package com.example.meiisreallycool.moviecollectionapp;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
+import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
 
 import java.util.List;
@@ -15,11 +16,14 @@ public interface MovieDAO {
     @Query("SELECT * FROM movie WHERE _id IN (:movieIds)")
     List<Movie> loadAllByIds(int[] movieIds);
 
- //   @Query("SELECT * FROM movie WHERE ")
- //   List<Movie> listAlphabetically();
+    @Query("SELECT * FROM movie ORDER BY  m_title ")
+    List<Movie> listAlphabetically();
 
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    void insertMovie(Movie... movies);
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertAll(Movie... movies);
 
     @Delete

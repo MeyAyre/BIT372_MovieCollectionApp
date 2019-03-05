@@ -1,14 +1,24 @@
 package com.example.meiisreallycool.moviecollectionapp;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.List;
+
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.mViewHolder> {
-    private String[] movieData;
+    private final List<Movie> movieData;
+    private final Context appContext;
+
+    public MovieAdapter(List<Movie> movieData, Context appContext){
+        this.movieData = movieData;
+        this.appContext = appContext;
+    }
 
     public static class mViewHolder extends  RecyclerView.ViewHolder{
+        @BindView(R.id.title);
         public TextView title;
         public mViewHolder(TextView v){
             super(v);
