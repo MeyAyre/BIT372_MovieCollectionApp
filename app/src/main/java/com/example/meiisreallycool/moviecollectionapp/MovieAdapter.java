@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.meiisreallycool.moviecollectionapp.database.Movie;
+
 import java.util.List;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.mViewHolder> {
@@ -18,16 +20,12 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.mViewHolder>
     }
 
     public static class mViewHolder extends  RecyclerView.ViewHolder{
-        @BindView(R.id.title);
+
         public TextView title;
         public mViewHolder(TextView v){
             super(v);
             title = v.findViewById(R.id.title);
         }
-    }
-
-    public MovieAdapter(String[] movieDataSet){
-        movieData = movieDataSet;
     }
 
     @Override
@@ -39,11 +37,12 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.mViewHolder>
 
     @Override
     public void onBindViewHolder(mViewHolder holder, int position){
-        holder.title.setText(movieData[position]);
+        final Movie movie_entity = movieData.get(position);
+        holder.title.setText(movie_entity.getTitle());
     }
 
     @Override
     public int getItemCount(){
-        return movieData.length;
+        return movieData.size();
     }
 }
