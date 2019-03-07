@@ -1,14 +1,14 @@
 package com.example.meiisreallycool.moviecollectionapp.views;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 
-import com.example.meiisreallycool.moviecollectionapp.MovieDatabase;
+import com.example.meiisreallycool.moviecollectionapp.database.MovieDatabase;
 import com.example.meiisreallycool.moviecollectionapp.R;
 import com.example.meiisreallycool.moviecollectionapp.database.Movie;
 
@@ -23,6 +23,7 @@ public class Details extends AppCompatActivity {
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
        // setSupportActionBar(toolbar);
 
+        imdb = MovieDatabase.getMovieDatabase(this);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,8 +44,11 @@ public class Details extends AppCompatActivity {
                 );
 
                 imdb.movieDAO().insertMovie(addNewMovie);
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Movie Saved", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+
+                Intent backToMain = new Intent(Details.this, MainActivity.class);
+                startActivity(backToMain);
             }
         });
     }
